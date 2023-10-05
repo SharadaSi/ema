@@ -1,18 +1,30 @@
-// ---HAMBURGER MENU---
+// ---HAMBURGER MENU TOGGLE---
 
 const navMenu = document.querySelector(".nav-menu")
 const  hamburger = document.querySelector(".hamburger")
+const navLinks = document.querySelectorAll(".nav-link");
 
+//Fnctn to close the dropdown menu when link is clicked
+const closeMenu = () => {
+    navMenu.classList.remove("open");
+    hamburger.classList.remove("is-active");
+}
 
+//Toggle the menu when hamburger is clicked
 hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("open")
     hamburger.classList.toggle("is-active")
 })
 
+// Close menu when a nav-link is clicked
+navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+});
+
+
 // ---SERVICES SECTION -IMAGE ZOOM--- 
 
 const img = document.querySelectorAll("img")
-console.log(img)
 
 img.forEach((element) => {
     element.addEventListener("mouseenter", () => {
@@ -26,9 +38,6 @@ img.forEach((element) => {
     })
 })
 
-// ---FOCUS ON FORM ON SCROLL---
-
-const focus = document.getElementsByTagName('input')[0].focus()
 
 // ---FORM VERIFICATION---
 
@@ -117,3 +126,45 @@ passwordConfirm.addEventListener("input", () => {
     }
 })
 
+
+// ---SCROLL UP LABEL---
+
+const body = document.querySelector("body")
+const topLabel = document.getElementById("scroll-up-label")
+console.log(topLabel);
+
+window.addEventListener("scroll", () => {
+    const vh = window.innerHeight
+    const scrolled = window.scrollY
+    if (scrolled > vh) {
+        topLabel.style.transform = "scale(1)"
+    }
+
+    if (vh > scrolled) {
+        topLabel.style.transform = "scale(0)"
+    }
+})
+
+// ---SCROLL BACK TO THE TOP---
+
+topLabel.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    })
+})
+
+// ---DARK N LIGHT THEME SWITCH---
+
+const switchMode = document.querySelector("input[type=checkbox]")
+const formImage = document.getElementById("form-image")
+
+switchMode.addEventListener("change", () => {
+    if (switchMode.checked) {
+        document.body.classList.add("dark-mode")
+        formImage.classList.add("dark-mode")
+    } else if (!switchMode.checked) {
+        document.body.classList.remove("dark-mode")
+        formImage.classList.remove("dark-mode")
+    }
+})
