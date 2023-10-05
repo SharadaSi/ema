@@ -9,6 +9,8 @@
     <title>Plant your monstera</title>
 </head>
 <body>
+    
+
     <header>
         <nav class="nav-bar">
 
@@ -18,7 +20,12 @@
                 <li class="nav-item"><a href="#home" class="nav-link">Our philosophy</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services for members</a></li>
                 <li class="nav-item"><a href="#form-section" class="nav-link">Contact</a></li>
+                <li><label class="switch" for ="switch-mode">
+                    <input type="checkbox" id="switch-mode">
+                    <span class="slider round"></span>
+                </label></li>
             </ul>
+
         </nav>
 
         <div class="hamburger">
@@ -29,15 +36,21 @@
 
     </header>
 
+    <div class="scroll-up-label" id="scroll-up-label">
+        <svg class = "up-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="white" d="M9.598 5.2a.5.5 0 0 1 .8 0l4.499 6.001a.5.5 0 0 1-.4.8H5.503a.5.5 0 0 1-.4-.8l4.495-6Zm1.6-.6c-.6-.8-1.8-.8-2.4 0l-4.496 6.002c-.74.989-.035 2.4 1.2 2.4h8.995c1.236 0 1.941-1.412 1.2-2.4L11.199 4.6ZM4 15a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H4Z"/></svg>
+    </div>
+
     <section class="home">
+        
         <div class="home-content">
             <h1>Monstera energy</h1>
             <p>Plant your own green soulmate</p>
             <button class="btn">Get a seed</button>
         </div>
     </section>
-
+    
     <section class="services" id="services">
+        
         <h2>Services for members</h2>
         <div class="services-container">
             <div class="img-container">
@@ -63,7 +76,7 @@
     <section class="form-section" id="form-section">
         <div class="card">
             
-            <div class="form-image">
+            <div class="form-image" id="form-image">
             </div>
             <form class="form" action="" method="post" name="main-form" autocomplete="on" id="form">
                 <h2 class="grid-heading">Subscribe</h2>
@@ -113,7 +126,7 @@
                     
                 </div>
 
-                <input class="form-btn" type="submit" value="Sign me up">
+                <input class="form-btn" type="submit" value="Sign me up" tabindex="9">
             </form>
         </div>
     </section>
